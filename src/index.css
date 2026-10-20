@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+@theme {
+  --color-surface-dim: #0f111a;
+  --color-surface-container: #181b29;
+  --color-surface-container-low: #141724;
+  --color-surface-container-high: #212638;
+  --color-surface-container-highest: #2b3247;
+  --color-surface: #272d40;
+  --color-surface-bright: #323a52;
+  --color-surface-border: #3b4460;
+  --color-text-main: #dce3f7;
+  --color-text-subtext: #9aa3c2;
+  --color-solar-peach: #fab387;
+  --color-status-green: #a6e3a1;
+  --color-warning-yellow: #f9e2af;
+  --color-danger-red: #f38ba8;
+  --font-atkinson: 'Atkinson Hyperlegible Next', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+@layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-atkinson), sans-serif;
+    background-color: #0f111a;
+    color: #dce3f7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Tabular numerals for steady, stable instrument readouts */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Real-time row flash animation */
+@keyframes pulseHighlight {
+  0% { background-color: rgba(250, 179, 135, 0.22); }
+  100% { background-color: transparent; }
+}
+
+.row-entry-flash {
+  animation: pulseHighlight 2.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Humanized tactile instrument slider */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  height: 28px;
+}
+
+input[type="range"]:focus {
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 8px;
+  border-radius: 9999px;
+  background: #181b29;
+  border: 1px solid #3b4460;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+input[type="range"]::-moz-range-track {
+  height: 8px;
+  border-radius: 9999px;
+  background: #181b29;
+  border: 1px solid #3b4460;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: -7px;
+  height: 22px;
+  width: 22px;
+  border-radius: 9999px;
+  background: radial-gradient(circle at 35% 35%, #fff 0%, #fab387 70%, #d88a5b 100%);
+  border: 2px solid #141724;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(250, 179, 135, 0.3);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+input[type="range"]:hover::-webkit-slider-thumb {
+  transform: scale(1.12);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5), 0 0 0 3px rgba(250, 179, 135, 0.4);
+}
+
+input[type="range"]::-moz-range-thumb {
+  height: 22px;
+  width: 22px;
+  border-radius: 9999px;
+  background: radial-gradient(circle at 35% 35%, #fff 0%, #fab387 70%, #d88a5b 100%);
+  border: 2px solid #141724;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(250, 179, 135, 0.3);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+input[type="range"]:hover::-moz-range-thumb {
+  transform: scale(1.12);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5), 0 0 0 3px rgba(250, 179, 135, 0.4);
+}
+
+/* Remove default number spinner */
+input[type="number"]::-webkit-inner-spin-button, 
+input[type="number"]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Clean, modern scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0f111a;
+}
+::-webkit-scrollbar-thumb {
+  background: #3b4460;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4f5b7d;
+}
+
+/* Subtle instrument surface shadow */
+.instrument-card {
+  background: linear-gradient(180deg, #181b29 0%, #151825 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .display-kpi-val {
+    font-size: 2.25rem !important;
+    line-height: 2.5rem !important;
+  }
+}

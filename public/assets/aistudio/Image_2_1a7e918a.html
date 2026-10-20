@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}
+@keyframes pulseHighlight {
+  0% { background-color: rgba(250, 179, 135, 0.28); }
+  100% { background-color: transparent; }
+}
+.row-entry-flash {
+  animation: pulseHighlight 2.4s ease-out;
+}
+/* Prevent browser spinner styling glitches */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-border":"#45475A","secondary-fixed":"#b4f2af","surface-dim":"#121221","on-error-container":"#ffdad6","inverse-primary":"#87512d","primary-fixed-dim":"#feb78a","primary":"#ffd7c0","on-background":"#e3e0f7","secondary-fixed-dim":"#99d595","on-tertiary":"#3c2f0b","secondary-container":"#19511f","on-tertiary-fixed":"#241a00","on-primary-fixed-variant":"#6b3a18","background":"#121221","surface-container-high":"#292839","error":"#ffb4ab","outline-variant":"#52443c","tertiary":"#f3ddaa","on-secondary-container":"#88c384","surface":"#313244","on-tertiary-fixed-variant":"#54451f","surface-variant":"#333344","surface-tint":"#feb78a","tertiary-container":"#d6c190","outline":"#9f8d84","on-surface":"#e3e0f7","on-primary-container":"#764320","on-secondary-fixed":"#002205","danger-red":"#F38BA8","on-secondary-fixed-variant":"#19511f","tertiary-fixed":"#f7e0ad","on-secondary":"#00390c","surface-container-low":"#1a1a2a","surface-container-lowest":"#0d0d1c","status-green":"#A6E3A1","on-error":"#690005","inverse-surface":"#e3e0f7","text-main":"#CDD6F4","primary-container":"#fab387","on-tertiary-container":"#5e4e28","tertiary-fixed-dim":"#dac493","surface-container-highest":"#333344","secondary":"#99d595","primary-fixed":"#ffdbc8","inverse-on-surface":"#2f2f40","error-container":"#93000a","surface-bright":"#383849","warning-yellow":"#F9E2AF","text-subtext":"#A6ADC8","on-primary":"#4f2504","on-primary-fixed":"#311300","on-surface-variant":"#d7c3b8","solar-peach":"#FAB387","surface-container":"#1e1e2e"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"gutter-mobile":"1rem","space-lg":"1.5rem","margin":"2.5rem","gutter":"2rem","space-xs":"0.25rem","space-xl":"2.5rem","margin-mobile":"1rem","space-sm":"0.5rem","space-md":"1rem"},"fontFamily":{"body-lg-bold":["Atkinson Hyperlegible Next"],"body-sm":["Atkinson Hyperlegible Next"],"display-xl-mobile":["Atkinson Hyperlegible Next"],"label-numeric":["Atkinson Hyperlegible Next"],"body-lg":["Atkinson Hyperlegible Next"],"headline-md":["Atkinson Hyperlegible Next"],"headline-lg":["Atkinson Hyperlegible Next"],"label-sm":["Atkinson Hyperlegible Next"],"display-xl":["Atkinson Hyperlegible Next"]},"fontSize":{"body-lg-bold":["16px",{"lineHeight":"24px","fontWeight":"700"}],"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}],"display-xl-mobile":["36px",{"lineHeight":"40px","letterSpacing":"-0.01em","fontWeight":"700"}],"label-numeric":["16px",{"lineHeight":"20px","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"headline-md":["20px",{"lineHeight":"28px","fontWeight":"600"}],"headline-lg":["28px",{"lineHeight":"36px","fontWeight":"700"}],"label-sm":["14px",{"lineHeight":"18px","fontWeight":"600"}],"display-xl":["48px",{"lineHeight":"52px","letterSpacing":"-0.02em","fontWeight":"700"}]}}}}</script></head><body class="bg-surface-container text-on-surface font-body-lg text-body-lg min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface-container border-b border-surface-border"><div class="h-16 max-w-7xl mx-auto px-gutter flex items-center justify-between"><div class="flex items-center gap-space-md"><img alt="Solar Monitor Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XiKjcOMNr154NLpBQVptaAq6B-PuQBU9HHiJQNHY5CrI69q-38nLlwshMxnYwnYl5EMXkUud_k2-WYWtVXB4S2C_5N1Fy3g8hf8FthVzox3YmJdOIXlpEcbe77C9gNvEYx936EUEgxGv8VhdIRyWg5YYGLmYkJqbziHKJJqfqBrpa9WhWGHGSLN7jyUMvUiMOB0qRwziCs78VHkAYCXG3Yk3zKS9DNaQRayS4B7Yx0C_sKdpA20afGJFE"/><span class="font-headline-md text-headline-md text-text-main tracking-tight">Solar Monitor</span><div class="h-6 w-px bg-surface-border mx-space-xs"></div><div class="flex items-center gap-space-xs bg-surface-dim px-space-sm py-space-xs rounded border border-surface-border" id="header-status-badge"><div class="w-2 h-2 rounded-full bg-status-green animate-pulse" id="header-status-indicator"></div><span class="font-label-sm text-label-sm text-status-green" id="header-status-text">LIVE</span></div></div><div class="flex items-center gap-space-lg"><nav class="hidden md:flex items-center gap-space-xs" data-active-classes="bg-surface text-text-main border-surface-border"><a class="px-space-md py-space-xs rounded font-label-sm text-label-sm text-text-subtext hover:text-text-main border border-transparent hover:border-surface-border transition-colors flex items-center gap-1.5" data-path="console" href="{{DATA:SCREEN:SCREEN_4}}" id="nav-console-btn" title="Switch to Console View"><span class="material-symbols-outlined text-sm">dashboard</span><span>Console</span></a><a aria-current="page" class="px-space-md py-space-xs rounded font-label-sm transition-colors bg-surface text-text-main border border-surface-border flex items-center gap-1.5" data-path="telemetry-log" href="#"><span class="material-symbols-outlined text-sm">format_list_bulleted</span><span>Telemetry Log</span></a></nav><div class="flex items-center gap-space-sm border-l border-surface-border pl-space-md"><span class="font-label-sm text-label-sm text-text-subtext uppercase tracking-wider select-none">MONITOR</span><button aria-checked="true" class="relative inline-flex h-6 w-11 items-center shrink-0 cursor-pointer rounded-full p-0.5 transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-solar-peach focus:ring-offset-2 focus:ring-offset-surface-container bg-surface-container-high border border-status-green/60" id="monitor-toggle" role="switch" tabindex="0" title="Toggle Master Monitor" type="button"><span class="sr-only">Toggle Monitor Telemetry</span><span aria-hidden="true" class="pointer-events-none inline-block h-4 w-4 rounded-full bg-status-green shadow-sm transform transition-transform duration-200 ease-in-out translate-x-5" id="monitor-toggle-knob"></span></button><span class="font-label-sm text-label-sm text-status-green font-bold tracking-wider select-none min-w-[28px]" id="monitor-toggle-status">ON</span></div></div></div></header><main class="w-full pt-16 bg-surface-container"><div class="flex flex-col w-full">
+<!-- Status Calibration Strip -->
+<div class="w-full bg-surface-dim border-b border-surface-border px-gutter py-space-xs flex flex-wrap items-center justify-between text-body-sm font-body-sm">
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-space-xs text-status-green">
+<span class="w-2 h-2 rounded-full bg-status-green animate-pulse" id="buffer-pool-indicator"></span>
+<span class="font-label-sm text-label-sm tracking-wider uppercase" id="buffer-pool-text">BUFFER POOL ONLINE</span>
+</div>
+<div class="hidden md:block h-3 w-px bg-surface-border"></div>
+<div class="text-text-subtext flex items-center gap-space-xs">
+<span>FRAME CAPTURE:</span>
+<span class="font-label-numeric text-label-numeric text-text-main tabular-nums" id="frame-counter-display">4,096 / 4,096 FRAMES CYCLIC</span>
+</div>
+<div class="hidden lg:block h-3 w-px bg-surface-border"></div>
+<div class="text-text-subtext hidden lg:flex items-center gap-space-xs">
+<span>TRANSMISSION:</span>
+<span class="font-label-numeric text-label-numeric text-status-green tabular-nums" id="transmission-rate-display">UDP 1000 Hz TELEMETRY FEED</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm text-text-subtext">
+<span>REF CLOCK:</span>
+<span class="font-label-numeric text-label-numeric text-solar-peach tabular-nums" id="telemetry-clock">14:32:00.104 UTC</span>
+</div>
+</div>
+<div class="max-w-7xl mx-auto w-full px-gutter py-space-lg flex flex-col gap-space-lg">
+<!-- Quick Telemetry Overview 4-Metric Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Metric 1 -->
+<div class="bg-surface border border-surface-border p-space-md rounded flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between text-text-subtext mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Current Flux Rate</span>
+<span class="material-symbols-outlined text-solar-peach text-sm">wb_sunny</span>
+</div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-display-xl text-display-xl text-text-main font-bold tracking-tight tabular-nums" id="live-flux-rate">6.42</span>
+<span class="font-label-numeric text-label-numeric text-solar-peach">kW</span>
+</div>
+<div class="mt-space-sm pt-space-xs border-t border-surface-border/60 flex items-center justify-between text-body-sm font-body-sm text-text-subtext">
+<span>Peak Today</span>
+<span class="font-label-numeric text-label-numeric text-text-main tabular-nums">8.91 kW <span class="text-text-subtext text-xs">@ 12:15</span></span>
+</div>
+</div>
+<!-- Metric 2 -->
+<div class="bg-surface border border-surface-border p-space-md rounded flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between text-text-subtext mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Total Generation Logged</span>
+<span class="material-symbols-outlined text-status-green text-sm">bolt</span>
+</div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-display-xl text-display-xl text-text-main font-bold tracking-tight tabular-nums" id="live-total-generation">18.24</span>
+<span class="font-label-numeric text-label-numeric text-status-green">kWh</span>
+</div>
+<div class="mt-space-sm pt-space-xs border-t border-surface-border/60 flex items-center justify-between text-body-sm font-body-sm text-text-subtext">
+<span>30-Day Cumulative</span>
+<span class="font-label-numeric text-label-numeric text-text-main tabular-nums">541.8 kWh</span>
+</div>
+</div>
+<!-- Metric 3 -->
+<div class="bg-surface border border-surface-border p-space-md rounded flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between text-text-subtext mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Bus Voltage / Inverter</span>
+<span class="material-symbols-outlined text-warning-yellow text-sm">electric_meter</span>
+</div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-display-xl text-display-xl text-text-main font-bold tracking-tight tabular-nums" id="live-bus-voltage">418.2</span>
+<span class="font-label-numeric text-label-numeric text-warning-yellow">V DC</span>
+</div>
+<div class="mt-space-sm pt-space-xs border-t border-surface-border/60 flex items-center justify-between text-body-sm font-body-sm text-text-subtext">
+<span>Inverter Efficiency</span>
+<span class="font-label-numeric text-label-numeric text-status-green">98.4% Nominal</span>
+</div>
+</div>
+<!-- Metric 4 -->
+<div class="bg-surface border border-surface-border p-space-md rounded flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between text-text-subtext mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Data Stream Integrity</span>
+<span class="material-symbols-outlined text-status-green text-sm">verified</span>
+</div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-display-xl text-display-xl text-text-main font-bold tracking-tight tabular-nums" id="live-stream-integrity">100.0</span>
+<span class="font-label-numeric text-label-numeric text-status-green">%</span>
+</div>
+<div class="mt-space-sm pt-space-xs border-t border-surface-border/60 flex items-center justify-between text-body-sm font-body-sm text-text-subtext">
+<span>Sampling: 1.0 s</span>
+<span class="font-label-numeric text-label-numeric text-status-green">0 Dropouts</span>
+</div>
+</div>
+</section>
+<!-- Visual System Telemetry Stream Strip (Rich SVG Micro-Chart) -->
+<div class="bg-surface border border-surface-border p-space-md rounded flex flex-col md:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md w-full md:w-auto">
+<div class="w-10 h-10 rounded bg-surface-dim border border-surface-border flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-solar-peach">file_download_done</span>
+</div>
+<div>
+<div class="font-label-sm text-label-sm uppercase tracking-wider text-text-subtext">Bus Waveform Sync</div>
+<div class="font-body-lg-bold text-body-lg-bold text-text-main" id="waveform-desc">Harmonic Distortion: 0.8% THD • Balanced Subphase</div>
+</div>
+</div>
+<!-- Real-time SVG Stream Line -->
+<div class="w-full md:flex-1 max-w-lg h-9 bg-surface-dim rounded border border-surface-border px-space-xs flex items-center overflow-hidden">
+<svg class="w-full h-7 text-solar-peach" id="telemetry-waveform-svg" preserveaspectratio="none" viewbox="0 0 320 28">
+<path d="M0,14 Q20,2 40,14 T80,14 T120,14 T160,14 T200,14 T240,14 T280,14 T320,14" fill="none" stroke="#45475A" stroke-dasharray="2,2" stroke-width="1"></path>
+<path d="M0,14 Q20,3 40,14 T80,14 T120,5 T160,14 T200,8 T240,14 T280,6 T320,14" fill="none" id="waveform-dynamic-path" stroke="currentColor" stroke-width="1.75"></path>
+<circle cx="320" cy="14" fill="#A6E3A1" id="waveform-indicator-dot" r="3"></circle>
+</svg>
+</div>
+<div class="flex items-center gap-space-md shrink-0 text-body-sm font-body-sm text-text-subtext">
+<span class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-solar-peach"></span><span id="label-irradiance">Irradiance: 742 W/m²</span></span>
+<span class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-status-green"></span><span id="label-coretemp">Core Temp: 48.2°C</span></span>
+</div>
+</div>
+<!-- Filter & Operational Controls Bar -->
+<section class="bg-surface border border-surface-border p-space-md rounded flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-md">
+<!-- Timeframe Filter -->
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-subtext mr-space-xs hidden sm:inline select-none">Span:</span>
+<button class="span-filter-btn px-space-md py-space-xs rounded font-label-sm text-label-sm bg-surface-dim border border-solar-peach text-solar-peach flex items-center gap-space-xs transition-colors cursor-pointer" data-span="live" id="span-btn-live" type="button">
+<span class="w-1.5 h-1.5 rounded-full bg-solar-peach animate-ping" id="span-live-ping"></span>
+          Live (Last 15m)
+        </button>
+<button class="span-filter-btn px-space-md py-space-xs rounded font-label-sm text-label-sm bg-surface-container border border-surface-border text-text-subtext hover:text-text-main transition-colors cursor-pointer" data-span="today" id="span-btn-today" type="button">
+          Today (24h)
+        </button>
+<button class="span-filter-btn px-space-md py-space-xs rounded font-label-sm text-label-sm bg-surface-container border border-surface-border text-text-subtext hover:text-text-main transition-colors cursor-pointer" data-span="week" id="span-btn-week" type="button">
+          Past 7 Days
+        </button>
+<div class="h-5 w-px bg-surface-border mx-space-xs hidden sm:block"></div>
+<button class="px-space-md py-space-xs rounded font-label-sm text-label-sm bg-surface-container border border-surface-border text-text-main hover:bg-surface-border transition-colors flex items-center gap-space-xs cursor-pointer active:scale-95" id="btn-export-csv-top" type="button">
+<span class="material-symbols-outlined text-sm">download</span>
+          Export CSV
+        </button>
+</div>
+<!-- Right Controls: Event Filter + Auto-scroll toggle -->
+<div class="flex flex-wrap items-center gap-space-md justify-between lg:justify-end">
+<!-- Event Level Filter Dropdown / Tabs -->
+<div class="flex items-center bg-surface-dim p-0.5 rounded border border-surface-border text-label-sm font-label-sm" id="category-filter-group">
+<button class="cat-filter-btn px-space-sm py-space-xs rounded bg-surface border border-surface-border text-text-main cursor-pointer" data-category="all" type="button">
+            All (<span id="cat-count-all">13</span>)
+          </button>
+<button class="cat-filter-btn px-space-sm py-space-xs rounded text-text-subtext hover:text-text-main border border-transparent transition-colors cursor-pointer" data-category="allocations" type="button">
+            Allocations (<span id="cat-count-allocations">4</span>)
+          </button>
+<button class="cat-filter-btn px-space-sm py-space-xs rounded text-text-subtext hover:text-text-main border border-transparent transition-colors cursor-pointer" data-category="outputs" type="button">
+            Outputs (<span id="cat-count-outputs">6</span>)
+          </button>
+<button class="cat-filter-btn px-space-sm py-space-xs rounded text-danger-red hover:text-error border border-transparent transition-colors flex items-center gap-1 cursor-pointer" data-category="alerts" type="button">
+<span class="w-1.5 h-1.5 rounded-full bg-danger-red"></span>
+            Alerts (<span id="cat-count-alerts">3</span>)
+          </button>
+</div>
+<!-- Live Stream Toggle -->
+<button class="inline-flex items-center gap-space-xs bg-surface-dim px-space-md py-space-xs rounded border border-surface-border hover:border-solar-peach/60 transition-colors cursor-pointer" id="autoscroll-toggle-btn" title="Toggle real-time streaming frame ingestion" type="button">
+<span class="relative flex h-2 w-2 shrink-0 items-center justify-center">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-status-green opacity-75" id="autoscroll-ping"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-status-green transition-colors" id="autoscroll-dot"></span>
+</span>
+<span class="font-label-sm text-label-sm text-text-subtext leading-none select-none">Auto-scroll Stream:</span>
+<span class="font-label-sm text-label-sm text-status-green font-bold leading-none select-none min-w-[24px]" id="autoscroll-status-text">ON</span>
+</button>
+</div>
+</section>
+<!-- Two-Section Layout Grid: 2/3 Table (Left) + 1/3 Health Diagnostics (Right) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Left Column: Chronological Real-Time Telemetry Log Table (8 cols / 66%) -->
+<section class="lg:col-span-8 bg-surface border border-surface-border rounded overflow-hidden flex flex-col shadow-sm">
+<div class="p-space-md bg-surface-dim border-b border-surface-border flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-solar-peach text-sm">reorder</span>
+<h2 class="font-headline-md text-headline-md text-text-main">Chronological Telemetry Stream</h2>
+<span class="text-xs px-2 py-0.5 rounded bg-surface border border-surface-border text-solar-peach font-label-numeric hidden sm:inline" id="active-span-badge">LIVE 15M</span>
+</div>
+<div class="flex items-center gap-space-sm text-body-sm font-body-sm text-text-subtext">
+<span>Buffer rate:</span>
+<span class="font-label-numeric text-label-numeric text-text-main">1000 ms</span>
+<div class="h-3 w-px bg-surface-border mx-space-xs"></div>
+<span class="text-status-green flex items-center gap-1" id="stream-sync-pill">
+<span class="w-1.5 h-1.5 rounded-full bg-status-green" id="sync-subdot"></span>
+<span id="sync-subtext">Synchronized</span>
+</span>
+</div>
+</div>
+<!-- Data Table Container with Horizontal Scroll fallback -->
+<div class="overflow-x-auto w-full min-h-[380px]">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container border-b border-surface-border text-text-subtext font-label-sm text-label-sm uppercase tracking-wider select-none">
+<th class="py-space-sm px-space-md">Timestamp</th>
+<th class="py-space-sm px-space-md">Sensor / Node</th>
+<th class="py-space-sm px-space-md">Event Type</th>
+<th class="py-space-sm px-space-md text-right">Measured Value</th>
+<th class="py-space-sm px-space-md text-right">Delta / Drift</th>
+<th class="py-space-sm px-space-md text-center">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-border font-body-sm text-body-sm" id="telemetry-table-body">
+<!-- Populated dynamically via JS -->
+</tbody>
+</table>
+</div>
+<!-- Buffer Pagination / Telemetry Feed Footer -->
+<div class="p-space-md bg-surface-dim border-t border-surface-border flex flex-col sm:flex-row items-center justify-between gap-space-sm text-body-sm font-body-sm text-text-subtext">
+<div class="flex items-center gap-space-sm">
+<span id="pagination-visible-info">Buffer Depth: 10 / 13 frames visible</span>
+<span class="text-surface-border">•</span>
+<span id="fifo-mode-status">FIFO Ring Active</span>
+</div>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm">
+<button class="px-space-sm py-1 rounded bg-surface border border-surface-border text-text-subtext hover:text-text-main transition-colors disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer" id="btn-page-prev">Previous</button>
+<span class="px-space-sm py-1 bg-surface-container rounded border border-surface-border text-text-main font-label-numeric tabular-nums" id="page-counter-label">Page 1 of 2</span>
+<button class="px-space-sm py-1 rounded bg-surface border border-surface-border text-text-main hover:bg-surface-border transition-colors disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer" id="btn-page-next">Next</button>
+</div>
+</div>
+</section>
+<!-- Right Column: Diagnostics & Node Status (4 cols / 33%) -->
+<section class="lg:col-span-4 flex flex-col gap-space-lg">
+<!-- Hardware Sensor Health Card -->
+<div class="bg-surface border border-surface-border rounded overflow-hidden">
+<div class="p-space-md bg-surface-dim border-b border-surface-border flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-status-green text-sm">hub</span>
+<h3 class="font-headline-md text-headline-md text-text-main">Hardware Sensor Health</h3>
+</div>
+<span class="font-label-sm text-label-sm text-status-green font-semibold">All 4 OK</span>
+</div>
+<div class="p-space-md flex flex-col gap-space-md">
+<!-- Node 1 -->
+<div class="flex flex-col gap-1.5 pb-space-sm border-b border-surface-border/50">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="font-body-lg-bold text-body-lg-bold text-text-main">PV Array String A</span>
+<span class="font-label-numeric text-label-numeric text-status-green tabular-nums" id="bar-string-a-val">99.8% Nominal</span>
+</div>
+<div class="w-full bg-surface-dim h-2 rounded border border-surface-border overflow-hidden">
+<div class="bg-solar-peach h-full transition-all duration-500 rounded" id="bar-string-a" style="width: 99.8%;"></div>
+</div>
+<div class="flex justify-between text-xs text-text-subtext font-label-numeric">
+<span>Sub-array #1-6</span>
+<span class="text-status-green">Connected</span>
+</div>
+</div>
+<!-- Node 2 -->
+<div class="flex flex-col gap-1.5 pb-space-sm border-b border-surface-border/50">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="font-body-lg-bold text-body-lg-bold text-text-main">PV Array String B</span>
+<span class="font-label-numeric text-label-numeric text-status-green tabular-nums" id="bar-string-b-val">100.0% Nominal</span>
+</div>
+<div class="w-full bg-surface-dim h-2 rounded border border-surface-border overflow-hidden">
+<div class="bg-solar-peach h-full transition-all duration-500 rounded" id="bar-string-b" style="width: 100%;"></div>
+</div>
+<div class="flex justify-between text-xs text-text-subtext font-label-numeric">
+<span>Sub-array #7-12</span>
+<span class="text-status-green">Connected</span>
+</div>
+</div>
+<!-- Node 3 -->
+<div class="flex flex-col gap-1.5 pb-space-sm border-b border-surface-border/50">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="font-body-lg-bold text-body-lg-bold text-text-main">Inverter Core</span>
+<span class="font-label-numeric text-label-numeric text-text-main tabular-nums" id="bar-inverter-val">48.2 °C</span>
+</div>
+<div class="w-full bg-surface-dim h-2 rounded border border-surface-border overflow-hidden">
+<div class="bg-status-green h-full transition-all duration-500 rounded" id="bar-inverter" style="width: 48.2%;"></div>
+</div>
+<div class="flex justify-between text-xs text-text-subtext font-label-numeric">
+<span>Threshold: 75.0 °C</span>
+<span class="text-status-green">Cooling Nominal</span>
+</div>
+</div>
+<!-- Node 4 -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="font-body-lg-bold text-body-lg-bold text-text-main">Battery Storage Rack</span>
+<span class="font-label-numeric text-label-numeric text-status-green tabular-nums" id="bar-battery-val">52.4 V / 78%</span>
+</div>
+<div class="w-full bg-surface-dim h-2 rounded border border-surface-border overflow-hidden">
+<div class="bg-status-green h-full transition-all duration-500 rounded" id="bar-battery" style="width: 78%;"></div>
+</div>
+<div class="flex justify-between text-xs text-text-subtext font-label-numeric">
+<span>LiFePO4 Chemistry</span>
+<span class="text-status-green">Healthy</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Active Event Triggers Card -->
+<div class="bg-surface border border-surface-border rounded overflow-hidden">
+<div class="p-space-md bg-surface-dim border-b border-surface-border flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-solar-peach text-sm">security</span>
+<h3 class="font-headline-md text-headline-md text-text-main">Active Event Triggers</h3>
+</div>
+<span class="font-label-sm text-label-sm text-text-subtext">Automated</span>
+</div>
+<div class="p-space-md flex flex-col gap-space-md text-body-sm font-body-sm">
+<div class="flex items-start gap-space-sm bg-surface-dim p-space-sm rounded border border-surface-border">
+<span class="material-symbols-outlined text-status-green text-base mt-0.5">check_circle</span>
+<div class="flex flex-col">
+<span class="font-body-lg-bold text-body-lg-bold text-text-main">Normal Generation Mode Active</span>
+<span class="text-text-subtext text-xs">Standard daily distribution curve applied across circuits.</span>
+</div>
+</div>
+<div class="flex items-start gap-space-sm bg-surface-dim p-space-sm rounded border border-surface-border">
+<span class="material-symbols-outlined text-status-green text-base mt-0.5">shield</span>
+<div class="flex flex-col">
+<span class="font-body-lg-bold text-body-lg-bold text-text-main">Over-allocation Safeguard</span>
+<span class="text-text-subtext text-xs">Status: <strong class="text-status-green">Armed</strong> (0 violations logged during session).</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs bg-surface-dim p-space-sm rounded border border-surface-border">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-subtext">Automatic Load Shed Policy</span>
+<div class="font-label-numeric text-label-numeric text-warning-yellow text-xs mt-1">
+                Sequence Order:
+              </div>
+<div class="p-space-xs rounded bg-surface border border-surface-border text-xs text-text-main font-label-numeric flex items-center gap-1 flex-wrap">
+<span class="px-1.5 py-0.5 bg-surface-dim rounded border border-surface-border">Classroom</span>
+<span>→</span>
+<span class="px-1.5 py-0.5 bg-surface-dim rounded border border-surface-border">Lab Sound &amp; Video</span>
+<span>→</span>
+<span class="px-1.5 py-0.5 bg-surface-dim rounded border border-surface-border">Machinery</span>
+<span>→</span>
+<span class="px-1.5 py-0.5 bg-warning-yellow/10 text-warning-yellow rounded border border-warning-yellow/30">Priority Labs</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Export Action Card -->
+<div class="bg-surface border border-surface-border p-space-md rounded flex flex-col gap-space-sm">
+<div class="font-label-sm text-label-sm uppercase tracking-wider text-text-subtext">Data Dump Utilities</div>
+<p class="font-body-sm text-body-sm text-text-subtext">
+            Directly export raw telemetry time-series frames with full high-frequency drift metrics.
+          </p>
+<div class="grid grid-cols-2 gap-space-xs mt-space-xs">
+<button class="px-space-md py-space-sm rounded bg-surface-dim border border-surface-border text-text-main font-label-sm text-label-sm hover:border-solar-peach transition-colors flex items-center justify-center gap-space-xs cursor-pointer active:scale-95" id="btn-export-csv-action" type="button">
+<span class="material-symbols-outlined text-sm">table_view</span>
+              .CSV Table
+            </button>
+<button class="px-space-md py-space-sm rounded bg-surface-dim border border-surface-border text-text-main font-label-sm text-label-sm hover:border-solar-peach transition-colors flex items-center justify-center gap-space-xs cursor-pointer active:scale-95" id="btn-export-json-action" type="button">
+<span class="material-symbols-outlined text-sm">data_object</span>
+              .JSON Frames
+            </button>
+</div>
+<button class="w-full mt-space-xs px-space-md py-space-sm rounded bg-surface-container border border-surface-border text-solar-peach font-label-sm text-label-sm hover:bg-surface-border transition-colors flex items-center justify-center gap-space-xs cursor-pointer active:scale-95" id="btn-export-fullbuffer" type="button">
+<span class="material-symbols-outlined text-sm">download_for_offline</span>
+            Download Full Buffer (4,096 Frames)
+          </button>
+</div>
+</section>
+</div>
+<!-- Telemetry Buffer Diagnostic Details Note -->
+<div class="bg-surface-dim border border-surface-border p-space-md rounded flex flex-col md:flex-row items-center justify-between gap-space-md text-text-subtext font-body-sm text-body-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-solar-peach text-base">memory</span>
+<span>Solar Energy Monitor • Laboratory Instrument Interface Ref. L-402 • Telemetry Log Buffer: 4,096 frames</span>
+</div>
+<div class="flex items-center gap-space-md font-label-numeric text-label-numeric text-xs">
+<span id="crc32-status">CRC-32: 0x9AF831B</span>
+<span class="text-status-green font-bold">Parity Check: PASS</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Notification Toast -->
+<div class="fixed bottom-6 right-6 z-50 transform transition-all duration-300 pointer-events-none opacity-0 translate-y-3" id="telemetry-toast">
+<div class="bg-surface-dim border border-solar-peach px-space-md py-space-sm rounded shadow-xl flex items-center gap-space-sm text-text-main font-body-sm">
+<span class="material-symbols-outlined text-solar-peach text-sm" id="toast-icon">download_done</span>
+<span id="toast-message">Telemetry exported successfully.</span>
+</div>
+</div>
+</main><footer class="w-full bg-surface-dim border-t border-surface-border py-space-md"><div class="max-w-7xl mx-auto px-gutter flex flex-col md:flex-row items-center justify-between gap-space-sm text-text-subtext font-body-sm text-body-sm"><div>Solar Energy Monitor • Laboratory Instrument Interface Ref. L-402</div><div class="flex items-center gap-space-md"><span class="flex items-center gap-space-xs"><span class="w-1.5 h-1.5 rounded-full bg-status-green"></span>ADC Active</span><span>Bus 48V Nominal</span></div></div></footer>
+<script>
+// ==========================================
+// TELEMETRY STATE & DATA STORES
+// ==========================================
+
+const INITIAL_LIVE_DATA = [
+  { id: 1, time: "14:32:00.104", sensor: "Inverter String B", event: "Output Sample", category: "outputs", value: "6.402 kW", delta: "+0.012 kW", deltaColor: "status-green", status: "Nominal", statusColor: "status-green", rawVal: 6.402, unit: "kW" },
+  { id: 2, time: "14:31:55.082", sensor: "Room Circuit: Classroom", event: "Allocation Shift", category: "allocations", value: "1.200 kW", delta: "-0.100 kW", deltaColor: "text-subtext", subtext: "(manual)", status: "Applied", statusColor: "solar-peach", rawVal: 1.2, unit: "kW" },
+  { id: 3, time: "14:31:50.011", sensor: "Inverter String A", event: "Voltage Check", category: "outputs", value: "418.2 V", delta: "0.0 V", deltaColor: "text-subtext", status: "Nominal", statusColor: "status-green", rawVal: 418.2, unit: "V" },
+  { id: 4, time: "14:31:45.008", sensor: "Battery Reserve BMS", event: "State of Charge", category: "outputs", value: "78.4%", delta: "-0.1%", deltaColor: "text-subtext", status: "Nominal", statusColor: "status-green", rawVal: 78.4, unit: "%" },
+  { id: 5, time: "14:31:30.980", sensor: "Ambient Pyranometer", event: "Irradiance", category: "outputs", value: "742.1 W/m²", delta: "+8.4 W/m²", deltaColor: "warning-yellow", status: "High Solar", statusColor: "warning-yellow", rawVal: 742.1, unit: "W/m²" },
+  { id: 6, time: "14:31:15.420", sensor: "Room Circuit: Lab Computer", event: "Load Meter", category: "allocations", value: "1.794 kW", delta: "+0.024 kW", deltaColor: "text-subtext", status: "Nominal", statusColor: "status-green", rawVal: 1.794, unit: "kW" },
+  { id: 7, time: "14:30:58.115", sensor: "Sub-Distribution Bus A-1", event: "Frequency", category: "outputs", value: "60.002 Hz", delta: "+0.001 Hz", deltaColor: "status-green", status: "Stable", statusColor: "status-green", rawVal: 60.002, unit: "Hz" },
+  { id: 8, time: "14:30:42.003", sensor: "Panel Temp Sensor #3", event: "Thermal Probe", category: "outputs", value: "38.4 °C", delta: "+0.2 °C", deltaColor: "text-subtext", status: "Within Limits", statusColor: "status-green", rawVal: 38.4, unit: "°C" },
+  { id: 9, time: "14:30:00.000", sensor: "System Controller", event: "Epoch Sync", category: "allocations", value: "NTP Stratum 1", delta: "0.2 ms offset", deltaColor: "text-subtext", status: "Synced", statusColor: "surface-border", textTone: "text-main", rawVal: 0.2, unit: "ms" },
+  { id: 10, time: "14:28:14.220", sensor: "Room Circuit: Lab Chemical", event: "Priority Lock", category: "allocations", value: "Set Priority Flag", delta: "Circuit A4", deltaColor: "text-subtext", status: "Priority", statusColor: "warning-yellow", rawVal: 1, unit: "flag" },
+  { id: 11, time: "14:26:40.100", sensor: "Battery Reserve BMS", event: "Cell Voltage Drift", category: "alerts", value: "3.48 V cell #4", delta: "+0.14 V delta", deltaColor: "danger-red", status: "Deviation Alert", statusColor: "danger-red", rawVal: 3.48, unit: "V" },
+  { id: 12, time: "14:24:10.518", sensor: "Inverter MPPT #2", event: "Efficiency Dip", category: "alerts", value: "92.1% yield", delta: "-4.2% drop", deltaColor: "danger-red", status: "Warning", statusColor: "danger-red", rawVal: 92.1, unit: "%" },
+  { id: 13, time: "14:21:05.890", sensor: "Ambient Temp Probe", event: "Thermal Warning", category: "alerts", value: "44.6 °C rack", delta: "+3.8 °C rise", deltaColor: "danger-red", status: "High Thermal", statusColor: "danger-red", rawVal: 44.6, unit: "°C" }
+];
+
+const TODAY_DATA = [
+  { id: 101, time: "12:15:00.000", sensor: "Inverter String B", event: "Peak Output Spike", category: "outputs", value: "8.910 kW", delta: "+0.450 kW", deltaColor: "status-green", status: "Daily Peak", statusColor: "status-green", rawVal: 8.91, unit: "kW" },
+  { id: 102, time: "11:45:22.312", sensor: "Room Circuit: Machinery", event: "Allocation Shift", category: "allocations", value: "3.240 kW", delta: "+0.500 kW", deltaColor: "solar-peach", status: "Applied", statusColor: "solar-peach", rawVal: 3.24, unit: "kW" },
+  { id: 103, time: "10:30:14.502", sensor: "Inverter String A", event: "Voltage Check", category: "outputs", value: "419.8 V", delta: "+1.6 V", deltaColor: "status-green", status: "Nominal", statusColor: "status-green", rawVal: 419.8, unit: "V" },
+  { id: 104, time: "09:00:10.015", sensor: "Battery Reserve BMS", event: "Charge Phase Entry", category: "allocations", value: "Bulk Fast Charge", delta: "+12.0 A", deltaColor: "status-green", status: "Charging", statusColor: "solar-peach", rawVal: 12.0, unit: "A" },
+  { id: 105, time: "08:12:44.200", sensor: "Array String B Junction", event: "Thermal Warning", category: "alerts", value: "62.1 °C", delta: "+11.4 °C", deltaColor: "danger-red", status: "High Thermal", statusColor: "danger-red", rawVal: 62.1, unit: "°C" },
+  { id: 106, time: "07:30:00.890", sensor: "Solar Inverter Master", event: "Dawn Relay Engage", category: "outputs", value: "1.210 kW", delta: "+1.210 kW", deltaColor: "solar-peach", status: "Online", statusColor: "status-green", rawVal: 1.21, unit: "kW" },
+  { id: 107, time: "06:15:30.120", sensor: "Sub-Distribution Bus A-1", event: "Frequency Lock", category: "outputs", value: "59.998 Hz", delta: "-0.002 Hz", deltaColor: "text-subtext", status: "Stable", statusColor: "status-green", rawVal: 59.998, unit: "Hz" },
+  { id: 108, time: "04:10:05.002", sensor: "Night Isolation Relay", event: "Allocation Shift", category: "allocations", value: "0.200 kW Idle", delta: "0.0 kW", deltaColor: "text-subtext", status: "Standby", statusColor: "surface-border", textTone: "text-main", rawVal: 0.2, unit: "kW" },
+  { id: 109, time: "02:00:00.000", sensor: "Firmware Kernel", event: "Memory Scrub", category: "allocations", value: "0 Faults", delta: "128MB ECC", deltaColor: "status-green", status: "Nominal", statusColor: "status-green", rawVal: 0, unit: "err" },
+  { id: 110, time: "00:45:12.784", sensor: "Grid Tied Inverter", event: "Island Check", category: "outputs", value: "0.000 kW Flow", delta: "0.000 kW", deltaColor: "text-subtext", status: "Idle", statusColor: "surface-border", textTone: "text-main", rawVal: 0, unit: "kW" }
+];
+
+const WEEK_DATA = [
+  { id: 201, time: "Day -1 13:40", sensor: "Inverter String A", event: "Output Sample", category: "outputs", value: "7.840 kW", delta: "+0.120 kW", deltaColor: "status-green", status: "Nominal", statusColor: "status-green", rawVal: 7.84, unit: "kW" },
+  { id: 202, time: "Day -2 11:20", sensor: "Battery Reserve BMS", event: "Full Absorption Cap", category: "allocations", value: "99.8% SOC", delta: "+2.4%", deltaColor: "status-green", status: "Full Charge", statusColor: "status-green", rawVal: 99.8, unit: "%" },
+  { id: 203, time: "Day -3 15:10", sensor: "Main Breaker Room C", event: "High Current Trip", category: "alerts", value: "68.4 A peak", delta: "+14.2 A surge", deltaColor: "danger-red", status: "Breaker Trip", statusColor: "danger-red", rawVal: 68.4, unit: "A" },
+  { id: 204, time: "Day -4 14:05", sensor: "Room Circuit: Classroom", event: "Allocation Shift", category: "allocations", value: "2.100 kW", delta: "+0.300 kW", deltaColor: "solar-peach", status: "Applied", statusColor: "solar-peach", rawVal: 2.1, unit: "kW" },
+  { id: 205, time: "Day -5 12:00", sensor: "Ambient Pyranometer", event: "Peak Irradiance Log", category: "outputs", value: "980.2 W/m²", delta: "+15.0 W/m²", deltaColor: "warning-yellow", status: "High Solar", statusColor: "warning-yellow", rawVal: 980.2, unit: "W/m²" },
+  { id: 206, time: "Day -6 16:30", sensor: "Inverter String B", event: "Output Sample", category: "outputs", value: "5.110 kW", delta: "-0.400 kW", deltaColor: "text-subtext", status: "Nominal", statusColor: "status-green", rawVal: 5.11, unit: "kW" },
+  { id: 207, time: "Day -7 09:15", sensor: "Lab Chemical Ventilator", event: "Allocation Shift", category: "allocations", value: "1.450 kW", delta: "+0.250 kW", deltaColor: "solar-peach", status: "Applied", statusColor: "solar-peach", rawVal: 1.45, unit: "kW" }
+];
+
+// Active App State
+let currentSpan = "live"; // 'live' | 'today' | 'week'
+let currentCategory = "all"; // 'all' | 'allocations' | 'outputs' | 'alerts'
+let isAutoScrollOn = true;
+let isMonitorActive = true;
+let currentPage = 1;
+const rowsPerPage = 10;
+let liveStreamTimer = null;
+
+// Read persisted monitor state if available
+try {
+  const savedState = localStorage.getItem('solar_monitor_active_state_v2');
+  if (savedState !== null) {
+    isMonitorActive = (savedState === 'true');
+  }
+} catch (e) {}
+
+// Working dataset
+let allData = {
+  live: [...INITIAL_LIVE_DATA],
+  today: [...TODAY_DATA],
+  week: [...WEEK_DATA]
+};
+
+// ==========================================
+// RENDER TELEMETRY TABLE & COUNTERS
+// ==========================================
+
+function getFilteredData() {
+  const dataset = allData[currentSpan] || [];
+  if (currentCategory === "all") return dataset;
+  return dataset.filter(row => row.category === currentCategory);
+}
+
+function updateCategoryCounts() {
+  const dataset = allData[currentSpan] || [];
+  const allCount = dataset.length;
+  const allocCount = dataset.filter(r => r.category === "allocations").length;
+  const outCount = dataset.filter(r => r.category === "outputs").length;
+  const alertCount = dataset.filter(r => r.category === "alerts").length;
+
+  const countAll = document.getElementById("cat-count-all");
+  const countAlloc = document.getElementById("cat-count-allocations");
+  const countOut = document.getElementById("cat-count-outputs");
+  const countAlert = document.getElementById("cat-count-alerts");
+
+  if (countAll) countAll.textContent = allCount;
+  if (countAlloc) countAlloc.textContent = allocCount;
+  if (countOut) countOut.textContent = outCount;
+  if (countAlert) countAlert.textContent = alertCount;
+}
+
+function renderTable(flashFirstRow = false) {
+  const tableBody = document.getElementById("telemetry-table-body");
+  if (!tableBody) return;
+
+  const filtered = getFilteredData();
+  const totalPages = Math.max(1, Math.ceil(filtered.length / rowsPerPage));
+  
+  if (currentPage > totalPages) currentPage = totalPages;
+  if (currentPage < 1) currentPage = 1;
+
+  const startIndex = (currentPage - 1) * rowsPerPage;
+  const pageRows = filtered.slice(startIndex, startIndex + rowsPerPage);
+
+  if (pageRows.length === 0) {
+    tableBody.innerHTML = `
+      <tr>
+        <td colspan="6" class="py-space-xl px-space-md text-center text-text-subtext font-body-sm">
+          <div class="flex flex-col items-center justify-center gap-space-xs">
+            <span class="material-symbols-outlined text-solar-peach text-3xl">filter_alt_off</span>
+            <span class="font-body-lg-bold text-text-main">No frames match current filter</span>
+            <span class="text-xs">Adjust span or event category to view logged frames.</span>
+          </div>
+        </td>
+      </tr>
+    `;
+  } else {
+    tableBody.innerHTML = pageRows.map((row, idx) => {
+      const isFlash = flashFirstRow && idx === 0 && currentPage === 1;
+      const flashClass = isFlash ? "row-entry-flash" : "";
+      const deltaColorClass = row.deltaColor === "status-green" ? "text-status-green" :
+                              row.deltaColor === "solar-peach" ? "text-solar-peach" :
+                              row.deltaColor === "warning-yellow" ? "text-warning-yellow" :
+                              row.deltaColor === "danger-red" ? "text-danger-red" : "text-text-subtext";
+
+      const statusBadgeClass = row.statusColor === "status-green" ? "border-status-green/60 text-status-green" :
+                               row.statusColor === "solar-peach" ? "border-solar-peach/60 text-solar-peach" :
+                               row.statusColor === "warning-yellow" ? "border-warning-yellow/60 text-warning-yellow" :
+                               row.statusColor === "danger-red" ? "border-danger-red/60 text-danger-red" :
+                               "border-surface-border text-text-main";
+
+      const eventTone = row.event === "Allocation Shift" ? "text-solar-peach" :
+                        row.event === "Irradiance" || row.event === "Priority Lock" ? "text-warning-yellow" :
+                        row.category === "alerts" ? "text-danger-red" : "text-text-subtext";
+
+      const valTone = row.event === "Irradiance" || row.event === "Priority Lock" ? "text-warning-yellow" :
+                      row.category === "alerts" ? "text-danger-red" :
+                      row.event === "Output Sample" ? "text-solar-peach" : "text-text-main";
+
+      return `
+        <tr class="hover:bg-surface-container/60 transition-colors ${flashClass}">
+          <td class="py-space-sm px-space-md font-label-numeric text-label-numeric text-text-subtext whitespace-nowrap tabular-nums">${row.time}</td>
+          <td class="py-space-sm px-space-md font-body-lg-bold text-body-lg-bold text-text-main whitespace-nowrap">${row.sensor}</td>
+          <td class="py-space-sm px-space-md ${eventTone} whitespace-nowrap">${row.event}</td>
+          <td class="py-space-sm px-space-md font-label-numeric text-label-numeric ${valTone} text-right whitespace-nowrap tabular-nums">${row.value}</td>
+          <td class="py-space-sm px-space-md font-label-numeric text-label-numeric ${deltaColorClass} text-right whitespace-nowrap tabular-nums">
+            ${row.delta} ${row.subtext ? `<span class="text-xs text-text-subtext">${row.subtext}</span>` : ''}
+          </td>
+          <td class="py-space-sm px-space-md text-center whitespace-nowrap">
+            <span class="inline-block px-space-sm py-0.5 rounded text-xs font-label-sm bg-surface-dim border ${statusBadgeClass}">
+              ${row.status}
+            </span>
+          </td>
+        </tr>
+      `;
+    }).join("");
+  }
+
+  // Update footer labels
+  const pageLabel = document.getElementById("page-counter-label");
+  if (pageLabel) pageLabel.textContent = `Page ${currentPage} of ${totalPages}`;
+
+  const infoLabel = document.getElementById("pagination-visible-info");
+  if (infoLabel) {
+    const displayedCount = Math.min(filtered.length, rowsPerPage);
+    infoLabel.textContent = `Buffer Depth: ${displayedCount} / ${filtered.length} frames visible`;
+  }
+
+  const prevBtn = document.getElementById("btn-page-prev");
+  const nextBtn = document.getElementById("btn-page-next");
+  if (prevBtn) prevBtn.disabled = currentPage <= 1;
+  if (nextBtn) nextBtn.disabled = currentPage >= totalPages;
+
+  updateCategoryCounts();
+}
+
+// ==========================================
+// SPAN FILTER HANDLING
+// ==========================================
+
+const spanButtons = document.querySelectorAll(".span-filter-btn");
+spanButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    const span = btn.dataset.span;
+    if (span === currentSpan) return;
+
+    currentSpan = span;
+    currentPage = 1;
+
+    // Reset styles
+    spanButtons.forEach(b => {
+      b.className = "span-filter-btn px-space-md py-space-xs rounded font-label-sm text-label-sm bg-surface-container border border-surface-border text-text-subtext hover:text-text-main transition-colors cursor-pointer";
+      const ping = b.querySelector(".animate-ping");
+      if (ping) ping.remove();
+    });
+
+    // Active style
+    btn.className = "span-filter-btn px-space-md py-space-xs rounded font-label-sm text-label-sm bg-surface-dim border border-solar-peach text-solar-peach flex items-center gap-space-xs transition-colors cursor-pointer";
+    if (span === "live") {
+      const pingDot = document.createElement("span");
+      pingDot.className = "w-1.5 h-1.5 rounded-full bg-solar-peach animate-ping";
+      pingDot.id = "span-live-ping";
+      btn.prepend(pingDot);
+    }
+
+    const badge = document.getElementById("active-span-badge");
+    if (badge) {
+      if (span === "live") badge.textContent = "LIVE 15M";
+      else if (span === "today") badge.textContent = "TODAY 24H";
+      else badge.textContent = "PAST 7D";
+    }
+
+    renderTable();
+    showToast(`Span changed to ${span.toUpperCase()}`);
+  });
+});
+
+// ==========================================
+// CATEGORY FILTER BADGES
+// ==========================================
+
+const catButtons = document.querySelectorAll(".cat-filter-btn");
+catButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    const category = btn.dataset.category;
+    currentCategory = category;
+    currentPage = 1;
+
+    catButtons.forEach(b => {
+      const isAlert = b.dataset.category === "alerts";
+      if (isAlert) {
+        b.className = "cat-filter-btn px-space-sm py-space-xs rounded text-danger-red hover:text-error border border-transparent transition-colors flex items-center gap-1 cursor-pointer";
+      } else {
+        b.className = "cat-filter-btn px-space-sm py-space-xs rounded text-text-subtext hover:text-text-main border border-transparent transition-colors cursor-pointer";
+      }
+    });
+
+    if (category === "alerts") {
+      btn.className = "cat-filter-btn px-space-sm py-space-xs rounded bg-surface border border-danger-red text-danger-red flex items-center gap-1 cursor-pointer shadow-sm";
+    } else {
+      btn.className = "cat-filter-btn px-space-sm py-space-xs rounded bg-surface border border-surface-border text-text-main cursor-pointer shadow-sm";
+    }
+
+    renderTable();
+  });
+});
+
+// ==========================================
+// PAGINATION
+// ==========================================
+
+document.getElementById("btn-page-prev")?.addEventListener("click", () => {
+  if (currentPage > 1) {
+    currentPage--;
+    renderTable();
+  }
+});
+
+document.getElementById("btn-page-next")?.addEventListener("click", () => {
+  const filtered = getFilteredData();
+  const totalPages = Math.ceil(filtered.length / rowsPerPage);
+  if (currentPage < totalPages) {
+    currentPage++;
+    renderTable();
+  }
+});
+
+// ==========================================
+// REAL-TIME AUTOSCROLL INGESTION
+// ==========================================
+
+const autoScrollBtn = document.getElementById("autoscroll-toggle-btn");
+const autoScrollDot = document.getElementById("autoscroll-dot");
+const autoScrollPing = document.getElementById("autoscroll-ping");
+const autoScrollText = document.getElementById("autoscroll-status-text");
+
+function toggleAutoScroll(forceState) {
+  isAutoScrollOn = typeof forceState === "boolean" ? forceState : !isAutoScrollOn;
+
+  if (isAutoScrollOn) {
+    autoScrollText.textContent = "ON";
+    autoScrollText.className = "font-label-sm text-label-sm text-status-green font-bold leading-none select-none min-w-[24px]";
+    autoScrollDot.className = "relative inline-flex rounded-full h-2 w-2 bg-status-green transition-colors";
+    autoScrollPing?.classList.remove("hidden");
+    startStreamTimer();
+    showToast("Auto-scroll telemetry stream enabled");
+  } else {
+    autoScrollText.textContent = "OFF";
+    autoScrollText.className = "font-label-sm text-label-sm text-text-subtext font-bold leading-none select-none min-w-[24px]";
+    autoScrollDot.className = "relative inline-flex rounded-full h-2 w-2 bg-surface-border transition-colors";
+    autoScrollPing?.classList.add("hidden");
+    stopStreamTimer();
+    showToast("Auto-scroll paused");
+  }
+}
+
+autoScrollBtn?.addEventListener("click", () => toggleAutoScroll());
+
+// Generator for new frames
+const sampleSensors = [
+  { sensor: "Inverter String B", event: "Output Sample", category: "outputs", unit: "kW", baseVal: 6.4, deltaGen: () => `+${(Math.random() * 0.05).toFixed(3)} kW` },
+  { sensor: "Inverter String A", event: "Voltage Check", category: "outputs", unit: "V", baseVal: 418.0, deltaGen: () => `+${(Math.random() * 0.4 - 0.2).toFixed(1)} V` },
+  { sensor: "Ambient Pyranometer", event: "Irradiance", category: "outputs", unit: "W/m²", baseVal: 742, deltaGen: () => `+${(Math.random() * 4).toFixed(1)} W/m²` },
+  { sensor: "Room Circuit: Classroom", event: "Allocation Shift", category: "allocations", unit: "kW", baseVal: 1.2, deltaGen: () => "-0.050 kW" },
+  { sensor: "Room Circuit: Lab Machinery", event: "Load Meter", category: "allocations", unit: "kW", baseVal: 2.34, deltaGen: () => "+0.012 kW" },
+  { sensor: "Battery Reserve BMS", event: "Cell Balance Check", category: "outputs", unit: "%", baseVal: 78.4, deltaGen: () => "-0.02%" },
+  { sensor: "Panel Temp Sensor #1", event: "Thermal Probe", category: "outputs", unit: "°C", baseVal: 38.6, deltaGen: () => "+0.1 °C" }
+];
+
+function injectNewTelemetryFrame() {
+  if (!isAutoScrollOn || !isMonitorActive || currentSpan !== "live") return;
+
+  const template = sampleSensors[Math.floor(Math.random() * sampleSensors.length)];
+  const now = new Date();
+  const timeStr = `${String(now.getUTCHours()).padStart(2, '0')}:${String(now.getUTCMinutes()).padStart(2, '0')}:${String(now.getUTCSeconds()).padStart(2, '0')}.${String(now.getUTCMilliseconds()).padStart(3, '0')}`;
+  
+  let valDisplay = "";
+  let raw = 0;
+  if (template.unit === "kW") {
+    raw = (template.baseVal + (Math.random() * 0.08 - 0.04));
+    valDisplay = `${raw.toFixed(3)} kW`;
+  } else if (template.unit === "V") {
+    raw = (template.baseVal + (Math.random() * 0.6 - 0.3));
+    valDisplay = `${raw.toFixed(1)} V`;
+  } else if (template.unit === "W/m²") {
+    raw = (template.baseVal + (Math.random() * 8 - 4));
+    valDisplay = `${raw.toFixed(1)} W/m²`;
+  } else {
+    raw = template.baseVal;
+    valDisplay = `${raw} ${template.unit}`;
+  }
+
+  const newEntry = {
+    id: Date.now(),
+    time: timeStr,
+    sensor: template.sensor,
+    event: template.event,
+    category: template.category,
+    value: valDisplay,
+    delta: `${template.deltaGen()}`,
+    deltaColor: "status-green",
+    status: "Nominal",
+    statusColor: "status-green",
+    rawVal: raw,
+    unit: template.unit
+  };
+
+  // Prepend
+  allData.live.unshift(newEntry);
+  if (allData.live.length > 4096) allData.live.pop();
+
+  // If on page 1, re-render and trigger subtle flash
+  if (currentPage === 1) {
+    renderTable(true);
+  } else {
+    updateCategoryCounts();
+  }
+
+  // Jitter the top metrics subtly
+  const liveFluxEl = document.getElementById("live-flux-rate");
+  if (liveFluxEl && Math.random() > 0.4) {
+    const flux = (6.40 + Math.random() * 0.05).toFixed(2);
+    liveFluxEl.textContent = flux;
+  }
+}
+
+function startStreamTimer() {
+  if (liveStreamTimer) clearInterval(liveStreamTimer);
+  liveStreamTimer = setInterval(injectNewTelemetryFrame, 3200);
+}
+
+function stopStreamTimer() {
+  if (liveStreamTimer) {
+    clearInterval(liveStreamTimer);
+    liveStreamTimer = null;
+  }
+}
+
+// ==========================================
+// LIVE WAVEFORM TICKER & JITTER
+// ==========================================
+
+let wavePhase = 0;
+const wavePath = document.getElementById("waveform-dynamic-path");
+const waveDot = document.getElementById("waveform-indicator-dot");
+
+function tickWaveform() {
+  if (isMonitorActive) {
+    wavePhase = (wavePhase + 0.12) % (Math.PI * 2);
+  }
+  if (wavePath) {
+    const amp = isMonitorActive ? 1 : 0.2;
+    const y1 = Math.round(14 + Math.sin(wavePhase) * 9 * amp);
+    const y2 = Math.round(14 + Math.sin(wavePhase + 1.2) * 8 * amp);
+    const y3 = Math.round(14 + Math.sin(wavePhase + 2.5) * 10 * amp);
+    const y4 = Math.round(14 + Math.sin(wavePhase + 3.8) * 7 * amp);
+
+    const d = `M0,14 Q20,${y1} 40,14 T80,14 T120,${y2} T160,14 T200,${y3} T240,14 T280,${y4} T320,14`;
+    wavePath.setAttribute("d", d);
+  }
+  if (waveDot) {
+    const endY = 14 + (isMonitorActive ? Math.sin(wavePhase + 5.0) * 2 : 0);
+    waveDot.setAttribute("cy", endY.toFixed(1));
+  }
+  requestAnimationFrame(tickWaveform);
+}
+requestAnimationFrame(tickWaveform);
+
+// ==========================================
+// EXPORT UTILITIES (CSV, JSON, FULL BUFFER)
+// ==========================================
+
+function downloadFile(filename, content, mimeType) {
+  const blob = new Blob([content], { type: mimeType });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+function exportAsCSV() {
+  const data = getFilteredData();
+  const headers = ["Timestamp", "Sensor_Node", "Event_Type", "Category", "Measured_Value", "Delta_Drift", "Status"];
+  const rows = data.map(r => [
+    `"${r.time}"`,
+    `"${r.sensor}"`,
+    `"${r.event}"`,
+    `"${r.category}"`,
+    `"${r.value}"`,
+    `"${r.delta}"`,
+    `"${r.status}"`
+  ]);
+
+  const csvContent = [headers.join(","), ...rows.map(e => e.join(","))].join("\n");
+  downloadFile(`solar_telemetry_log_${currentSpan}.csv`, csvContent, "text/csv;charset=utf-8;");
+  showToast("solar_telemetry_log.csv downloaded");
+}
+
+function exportAsJSON() {
+  const data = getFilteredData();
+  const jsonExport = {
+    system: "Solar Monitor Lab Instrument Ref. L-402",
+    exported_at_utc: new Date().toISOString(),
+    span: currentSpan,
+    category_filter: currentCategory,
+    frame_count: data.length,
+    frames: data
+  };
+  downloadFile("telemetry_frames.json", JSON.stringify(jsonExport, null, 2), "application/json");
+  showToast("telemetry_frames.json downloaded");
+}
+
+function exportFullBuffer() {
+  const fullDump = [];
+  const now = Date.now();
+  for (let i = 0; i < 4096; i++) {
+    const t = new Date(now - i * 1000).toISOString();
+    fullDump.push({
+      frame_index: 4096 - i,
+      timestamp: t,
+      inverter_voltage_vdc: (418 + (Math.sin(i * 0.05) * 2.4)).toFixed(2),
+      flux_kw: (6.42 + (Math.cos(i * 0.02) * 0.8)).toFixed(3),
+      battery_soc: (78.4 - (i * 0.001)).toFixed(2),
+      parity: "VALID_CRC32_0x9AF831B"
+    });
+  }
+  const dumpPayload = {
+    buffer_capacity: 4096,
+    ring_type: "FIFO Cyclic Hardware Dump",
+    generated_utc: new Date().toISOString(),
+    checksum: "0x9AF831B",
+    frames: fullDump
+  };
+  downloadFile("telemetry_raw_buffer_4096.json", JSON.stringify(dumpPayload, null, 2), "application/json");
+  showToast("Full buffer (4,096 frames) downloaded");
+}
+
+document.getElementById("btn-export-csv-top")?.addEventListener("click", exportAsCSV);
+document.getElementById("btn-export-csv-action")?.addEventListener("click", exportAsCSV);
+document.getElementById("btn-export-json-action")?.addEventListener("click", exportAsJSON);
+document.getElementById("btn-export-fullbuffer")?.addEventListener("click", exportFullBuffer);
+
+// ==========================================
+// TOAST NOTIFICATIONS
+// ==========================================
+
+let toastTimer = null;
+function showToast(msg) {
+  const toast = document.getElementById("telemetry-toast");
+  const toastMsg = document.getElementById("toast-message");
+  if (!toast || !toastMsg) return;
+
+  toastMsg.textContent = msg;
+  toast.classList.remove("opacity-0", "translate-y-3");
+  toast.classList.add("opacity-100", "translate-y-0");
+
+  if (toastTimer) clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => {
+    toast.classList.remove("opacity-100", "translate-y-0");
+    toast.classList.add("opacity-0", "translate-y-3");
+  }, 2400);
+}
+
+// ==========================================
+// MONITOR SWITCH CONTROLLER (Consistent with SCREEN_4)
+// ==========================================
+
+const monitorToggle = document.getElementById("monitor-toggle");
+const monitorToggleKnob = document.getElementById("monitor-toggle-knob");
+const monitorToggleStatus = document.getElementById("monitor-toggle-status");
+const headerStatusDot = document.getElementById("header-status-indicator");
+const headerStatusText = document.getElementById("header-status-text");
+const bufferPoolIndicator = document.getElementById("buffer-pool-indicator");
+const bufferPoolText = document.getElementById("buffer-pool-text");
+const syncSubdot = document.getElementById("sync-subdot");
+const syncSubtext = document.getElementById("sync-subtext");
+
+function renderMonitorToggleUI() {
+  if (!monitorToggle || !monitorToggleKnob || !monitorToggleStatus) return;
+
+  if (isMonitorActive) {
+    monitorToggle.setAttribute("aria-checked", "true");
+    monitorToggle.className = "relative inline-flex h-6 w-11 items-center shrink-0 cursor-pointer rounded-full p-0.5 transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-solar-peach focus:ring-offset-2 focus:ring-offset-surface-container bg-surface-container-high border border-status-green/60";
+    monitorToggleKnob.className = "pointer-events-none inline-block h-4 w-4 rounded-full bg-status-green shadow-sm transform transition-transform duration-200 ease-in-out translate-x-5";
+    monitorToggleStatus.textContent = "ON";
+    monitorToggleStatus.className = "font-label-sm text-label-sm text-status-green font-bold tracking-wider select-none min-w-[28px]";
+
+    if (headerStatusDot) {
+      headerStatusDot.className = "w-2 h-2 rounded-full bg-status-green animate-pulse";
+    }
+    if (headerStatusText) {
+      headerStatusText.textContent = "LIVE";
+      headerStatusText.className = "font-label-sm text-label-sm text-status-green";
+    }
+    if (bufferPoolIndicator) {
+      bufferPoolIndicator.className = "w-2 h-2 rounded-full bg-status-green animate-pulse";
+    }
+    if (bufferPoolText) {
+      bufferPoolText.textContent = "BUFFER POOL ONLINE";
+      bufferPoolText.className = "font-label-sm text-label-sm tracking-wider uppercase text-status-green";
+    }
+    if (syncSubdot) syncSubdot.className = "w-1.5 h-1.5 rounded-full bg-status-green";
+    if (syncSubtext) syncSubtext.textContent = "Synchronized";
+
+    startStreamTimer();
+  } else {
+    monitorToggle.setAttribute("aria-checked", "false");
+    monitorToggle.className = "relative inline-flex h-6 w-11 items-center shrink-0 cursor-pointer rounded-full p-0.5 transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-solar-peach focus:ring-offset-2 focus:ring-offset-surface-container bg-surface-container-high border border-surface-border";
+    monitorToggleKnob.className = "pointer-events-none inline-block h-4 w-4 rounded-full bg-text-subtext shadow-sm transform transition-transform duration-200 ease-in-out translate-x-0.5";
+    monitorToggleStatus.textContent = "OFF";
+    monitorToggleStatus.className = "font-label-sm text-label-sm text-text-subtext font-bold tracking-wider select-none min-w-[28px]";
+
+    if (headerStatusDot) {
+      headerStatusDot.className = "w-2 h-2 rounded-full bg-text-subtext";
+    }
+    if (headerStatusText) {
+      headerStatusText.textContent = "PAUSED";
+      headerStatusText.className = "font-label-sm text-label-sm text-text-subtext";
+    }
+    if (bufferPoolIndicator) {
+      bufferPoolIndicator.className = "w-2 h-2 rounded-full bg-warning-yellow";
+    }
+    if (bufferPoolText) {
+      bufferPoolText.textContent = "BUFFER POOL STANDBY";
+      bufferPoolText.className = "font-label-sm text-label-sm tracking-wider uppercase text-warning-yellow";
+    }
+    if (syncSubdot) syncSubdot.className = "w-1.5 h-1.5 rounded-full bg-warning-yellow";
+    if (syncSubtext) syncSubtext.textContent = "Sampling Paused";
+
+    stopStreamTimer();
+  }
+}
+
+function handleMonitorToggle() {
+  isMonitorActive = !isMonitorActive;
+  try {
+    localStorage.setItem('solar_monitor_active_state_v2', String(isMonitorActive));
+  } catch (e) {}
+
+  renderMonitorToggleUI();
+  showToast(isMonitorActive ? "Master monitoring activated" : "Master monitoring standby (sampling paused)");
+}
+
+monitorToggle?.addEventListener("click", handleMonitorToggle);
+monitorToggle?.addEventListener("keydown", (e) => {
+  if (e.key === " " || e.key === "Enter") {
+    e.preventDefault();
+    handleMonitorToggle();
+  }
+});
+
+// Console Nav Switch with clean link fallback
+const navConsoleBtn = document.getElementById("nav-console-btn");
+navConsoleBtn?.addEventListener("click", (e) => {
+  const targetHref = navConsoleBtn.getAttribute("href");
+  if (!targetHref || targetHref === "#") {
+    e.preventDefault();
+    showToast("Navigating to Console view...");
+    window.dispatchEvent(new CustomEvent('shell-navigate', { detail: { path: 'console' } }));
+  }
+});
+
+// ==========================================
+// LIVE UTC CLOCK
+// ==========================================
+
+(function initTelemetryStream() {
+  const clockElement = document.getElementById('telemetry-clock');
+  if (!clockElement) return;
+
+  setInterval(() => {
+    const now = new Date();
+    const hours = String(now.getUTCHours()).padStart(2, '0');
+    const minutes = String(now.getUTCMinutes()).padStart(2, '0');
+    const seconds = String(now.getUTCSeconds()).padStart(2, '0');
+    const ms = String(now.getUTCMilliseconds()).padStart(3, '0');
+    clockElement.textContent = `${hours}:${minutes}:${seconds}.${ms} UTC`;
+  }, 100);
+})();
+
+// Initial Setup
+renderMonitorToggleUI();
+renderTable();
+if (isMonitorActive && isAutoScrollOn) {
+  startStreamTimer();
+}
+</script>
+</body></html>

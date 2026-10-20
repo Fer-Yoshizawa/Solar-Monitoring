@@ -1,0 +1,6 @@
+{
+  "name": "Solar Monitor",
+  "description": "High-precision laboratory-grade solar power monitoring and dynamic circuit load budgeting instrument.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
